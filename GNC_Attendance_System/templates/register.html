@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Registration</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; padding: 24px 16px; margin: 0; }
+        .form-box { width: 100%; max-width: 450px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; border: 1px solid #ddd; }
+        h2 { color: #004d40; text-align: center; }
+        input { width: 100%; padding: 12px 10px; margin: 8px 0 15px 0; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+        button { width: 100%; background: #00796b; color: white; padding: 12px; border: none; font-weight: bold; border-radius: 4px; cursor: pointer; }
+        @media (max-width: 480px) { .form-box { padding: 22px 18px; } }
+    </style>
+</head>
+<body>
+    <div class="form-box">
+        <h2>📋 Registration Portal</h2>
+        {% with messages = get_flashed_messages() %}{% if messages %}<p style="color: red; font-weight: bold; text-align: center;">{{ messages }}</p>{% endif %}{% endwith %}
+        <form method="POST">
+            <h4 style="color: #555; margin-bottom: 5px;">🔒 System Admin Login</h4>
+            <label>Admin Username:</label>
+            <input type="text" name="user" required>
+            <label>Admin Password:</label>
+            <input type="password" name="password" required>
+            <hr>
+            <h4 style="color: #555; margin-bottom: 5px;">👤 Student Profile</h4>
+            <label>Student Full Name:</label>
+            <input type="text" name="name" required>
+            <label>Roll Number:</label>
+            <input type="text" name="roll_no" placeholder="e.g., GNC-3401" required>
+            <label>CNIC / B-Form Number:</label>
+            <input type="text" name="cnic" placeholder="e.g., 42101-XXXXXXX-X" required>
+            <label>Department / Class:</label>
+            <input type="text" name="dept" placeholder="e.g., XII-Pre-Engineering" required>
+            <button type="submit">Generate Official QR Card</button>
+        </form>
+    </div>
+</body>
+</html>

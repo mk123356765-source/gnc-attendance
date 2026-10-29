@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Verification Status</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; padding: 40px 16px; text-align: center; margin: 0; }
+        .box { width: 100%; max-width: 500px; margin: 0 auto; background: white; padding: 32px 24px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .success { color: #2e7d32; }
+        .failed { color: #c62828; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        {% if success %}
+            <h1 class="success">🎉 Attendance Logged</h1>
+            <p style="font-size: 18px;">{{ msg }}</p>
+        {% else %}
+            <h1 class="failed">❌ Action Terminated</h1>
+            <p style="font-size: 18px;">{{ msg }}</p>
+        {% endif %}
+        <br>
+        <a href="/" style="color: #0288d1; font-weight: bold; text-decoration: none;">⬅️ Back to Main Web Portal</a>
+    </div>
+</body>
+</html>

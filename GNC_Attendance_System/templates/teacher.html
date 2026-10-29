@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Teacher Panel</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #fff8e1; padding: 30px 16px; text-align: center; margin: 0; }
+        .view-box { width: 100%; max-width: 450px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; border: 1px solid #ffe082; text-align: left; }
+        h2 { color: #f57c00; text-align: center; }
+        .keys { background: #fff3e0; padding: 20px; border-left: 5px solid #ffb74d; font-family: monospace; font-size: 16px; margin: 20px 0; }
+        @media (max-width: 480px) { .view-box { padding: 22px 18px; } .keys { overflow-wrap: anywhere; padding: 14px; } }
+    </style>
+</head>
+<body>
+    <h2>Government National College Karachi</h2>
+    <div class="view-box">
+        <h2>👨‍🏫 Teacher Announcement Board</h2>
+        <p>Announce these temporary credentials to the students for today's attendance:</p>
+        <div class="keys">
+            <strong>TODAY'S USERNAME:</strong> {{ current_user }}<br><br>
+            <strong>TODAY'S PASSWORD:</strong> {{ current_pass }}
+        </div>
+        <p style="font-size: 12px; color: #e65100; font-weight: bold; background: #fffde7; padding: 8px; border: 1px solid #fff59d;">⚠️ Notice: Modifying keys is locked. Only the Principal can update these credentials.</p>
+        <p style="text-align: center;"><a href="/" style="color:#f57c00; text-decoration:none; font-weight:bold;">⬅️ Main Portal</a></p>
+    </div>
+</body>
+</html>
